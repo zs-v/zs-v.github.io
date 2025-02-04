@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Üsd a hörcsögöt!</title>
+</head>
+<body>
+    <header>
+        <h1 onclick="random()">Játék</h1>
+        <p><input type="button" value="Indítás" onclick="indit()"></p>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <td id="1" onclick="check(1)"></td>
+                <td id="2" onclick="check(2)"></td>
+                <td id="3" onclick="check(3)"></td>
+                <td id="4" onclick="check(4)"></td>
+            </tr>
+            <tr>
+                <td id="5" onclick="check(5)"></td>
+                <td id="6" onclick="check(6)"></td>
+                <td id="7" onclick="check(7)"></td>
+                <td id="8" onclick="check(8)"></td>
+            </tr>
+            <tr>
+                <td id="9" onclick="check(9)"></td>
+                <td id="10" onclick="check(10)"></td>
+                <td id="11" onclick="check(11)"></td>
+                <td id="12" onclick="check(12)"></td>
+            </tr>
+            <tr>
+                <td id="13" onclick="check(13)"></td>
+                <td id="14" onclick="check(14)"></td>
+                <td id="15" onclick="check(15)"></td>
+                <td id="16" onclick="check(16)"></td>
+            </tr>
+        </table>
+
+        <section>
+            <div>
+                <p>Pontszám:</p>
+                <p id="pont">0</p>
+            </div>
+            
+            <div>
+                <p>Idő:</p>
+                <p id="ido"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
