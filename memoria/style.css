@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:midnightblue;
+    color: whitesmoke;
+}
+
+header{
+    text-align: center;
+    padding: 20px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(6, 100px);
+    gap: 10px;
+    justify-content: center;
+}
+
+main div{
+    background-color: cornflowerblue;
+    transition: 0.3s;
+    box-shadow: 10px, 10px, 5px, wheat;
+    border-radius: 3px;
+}
+main div:hover{
+    background-color: darkturquoise;
+    cursor: pointer;
+}
+
+footer{
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
