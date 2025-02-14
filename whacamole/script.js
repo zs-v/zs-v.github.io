@@ -38,7 +38,7 @@ function timer(){
 function check(szam){
     
     if(document.getElementById(szam).style.backgroundColor == "red"){
-        document.getElementById(szam).style.backgroundColor = "aqua";
+        document.getElementById(szam).style.backgroundColor = "";
         pontszam();
         random(szam);
     }
