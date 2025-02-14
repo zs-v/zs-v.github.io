@@ -52,7 +52,7 @@ function szamlalo(){
     }
 
     setTimeout(() => {
-            alert('Letelt az idő!')
+            alert('Letelt az idő! Megtalált párok: ' + megtalaltparok)
         var divek = document.querySelectorAll("main div");
         for (let index = 0; index < divek.length; index++) {
             const element = divek[index];
@@ -68,6 +68,7 @@ felcount = 0;
 felegy = null;
 lock = false;
 kattintasok = 0;
+megtalaltparok = 0;
 function klikk(e){
     if(lock == false){
         let elem = e.target;
@@ -91,6 +92,13 @@ function klikk(e){
                         felegy.style.backgroundColor = "green";
                         elem.style.backgroundColor = "green";
                         lock = false;
+                        megtalaltparok++;
+                        document.getElementById("megtalaltpar").style.color= "green";
+                        document.getElementById("megtalaltpar").innerHTML = megtalaltparok;
+                        setTimeout(() => {
+                            document.getElementById("megtalaltpar").style.color= "";
+                            
+                        }, 1000);
                     }
                     else{
                         felegy.style.backgroundColor = "red";
@@ -116,12 +124,13 @@ function klikk(e){
                 lock = false;
             }
         }
-        
-        
-        document.getElementById("felcount").innerHTML = felcount;
-        document.getElementById("felegy").innerHTML = felegy.id;
-        document.getElementById("kattintasok").innerHTML = kattintasok;
-        
+        document.getElementById("katt").style.color= "red";
+        document.getElementById("katt").innerHTML = kattintasok;
+        setTimeout(() => {
+            document.getElementById("katt").style.color= "";
+                            
+            }, 300);
+    
     }
 }
 

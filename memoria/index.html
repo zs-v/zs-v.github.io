@@ -12,8 +12,9 @@
     <header>
         <h1>Memóriajáték</h1>
         <div>
-            <p>Játékidő:</p>
-            <p id="timer"></p>
+            <p class="szoveg" id="szoveg">Játékidő:</p>
+            <p class="masodperc" id="timer"></p>
+            <p class="masodperc">mp</p>
         </div>
     </header>
     <main>
@@ -55,10 +56,14 @@
         <div></div>
     </main>
     <footer>
-        <p>Játék</p>
-        <p id="felcount"></p>
-        <p id="felegy"></p>
-        <p id="kattintasok"></p>
+        <div>
+            <p>Megtalált párok:</p>
+            <p id="megtalaltpar">0</p>
+        </div>
+        <div>
+            <p>Kattintások: </p>
+            <p id="katt">0</p>
+        </div>
     </footer>
 </body>
 </html>
