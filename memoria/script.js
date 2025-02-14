@@ -1,7 +1,128 @@
 function main(){
-    list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R"];
 
     randomszam();
+
+    var divek = document.querySelectorAll("main div");
+    for (let index = 0; index < divek.length; index++) {
+        const element = divek[index];
+        element.id = list[randomlista[index]];
+        element.innerHTML = list[randomlista[index]];
+        element.addEventListener('click', klikk);
+        element.felforditva = true;
+    }
+    
+    indulhat()
+    setTimeout(function(){
+        for (let index = 0; index < divek.length; index++) {
+            const element = divek[index];
+            element.innerHTML = "";
+            element.felforditva = false;
+            }
+    }, 2000);
+
+    setTimeout(() => {
+        szamlalo();
+    }, 2000);
+}//17
+
+function indulhat(){
+    for (let index = 0; index <= 20; index++) {
+        setTimeout(function(){
+            kivonas();
+        }, index * 100);
+    }
+}
+
+let countdown = 20;
+function kivonas(){
+    document.getElementById("timer").innerHTML = countdown;
+    countdown = countdown - 1;
+}
+
+function szamlalo(){
+    ido = 200;
+    
+    countdown = ido;
+    for (let index = 0; index <= ido; index++) {
+        setTimeout(function(){
+            document.getElementById("timer").innerHTML = countdown;
+            countdown = countdown - 1;
+        }, index * 1000);
+    }
+
+    setTimeout(() => {
+            alert('Letelt az idő!')
+        var divek = document.querySelectorAll("main div");
+        for (let index = 0; index < divek.length; index++) {
+            const element = divek[index];
+            element.felforditva = true;
+            element.innerHTML = list[randomlista[index]];
+        }
+        
+    }, ido * 1000);
+}
+
+
+felcount = 0;
+felegy = null;
+lock = false;
+kattintasok = 0;
+function klikk(e){
+    if(lock == false){
+        let elem = e.target;
+        if(elem.felforditva == false){
+            kattintasok++;
+            lock = true;
+
+            elem.felforditva = true;
+            elem.innerHTML = elem.id;
+            if(felegy != null){
+                if(felcount == 0){
+                    felcount = 1;
+                    felegy = elem;
+                    lock = false;
+                }
+                else if(felcount == 1){
+                    felcount = 0;
+                    
+                    if(felegy.id == elem.id){
+                        //alert('Eltaláltad!');
+                        felegy.style.backgroundColor = "green";
+                        elem.style.backgroundColor = "green";
+                        lock = false;
+                    }
+                    else{
+                        felegy.style.backgroundColor = "red";
+                        elem.style.backgroundColor = "red";
+                        setTimeout(function(){
+                            
+                            felegy.innerHTML = "";
+                            felegy.felforditva = false;
+                            elem.innerHTML = "";
+                            elem.felforditva = false;
+                            
+                            felegy.style.backgroundColor = "";
+                            elem.style.backgroundColor = "";
+                            
+                            lock = false;
+                        }, 1000);
+                    }
+                }
+            }
+            else{
+                felegy = elem;
+                felcount = 1;
+                lock = false;
+            }
+        }
+        
+        
+        document.getElementById("felcount").innerHTML = felcount;
+        document.getElementById("felegy").innerHTML = felegy.id;
+        document.getElementById("kattintasok").innerHTML = kattintasok;
+        
+    }
 }
 
 randomlista = [];
@@ -13,7 +134,7 @@ function randomszam(){
             randomszam();
         }
         else{
-            list[mennyivanbenne] = rand;
+            randomlista[mennyivanbenne] = rand;
             mennyivanbenne++;
             randomszam();
         }

@@ -12,12 +12,15 @@ body{
 header{
     text-align: center;
     padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
 }
 
 main{
     display: grid;
-    grid-template-columns: repeat(6, 100px);
-    grid-template-rows: repeat(6, 100px);
+    grid-template-columns: repeat(6, 80px);
+    grid-template-rows: repeat(6, 80px);
     gap: 10px;
     justify-content: center;
 }
@@ -27,6 +30,8 @@ main div{
     transition: 0.3s;
     box-shadow: 10px, 10px, 5px, wheat;
     border-radius: 3px;
+    font-size: 60px;
+    text-align: center;
 }
 main div:hover{
     background-color: darkturquoise;
