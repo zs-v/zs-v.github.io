@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>NévnAPP</title>
+</head>
+<body>
+    <header>
+        <h1>NévnAPP</h1>
+    </header>
+    <main>
+        <div class="tegnap">
+            <p>Tegnapi névnap: </p>
+            <p id="tegnap"></p>
+        </div>
+        
+        <div class="valasztos">
+            <section class="sor">
+
+                <select name="Hónap" id="honap">
+                    <option value="01">Január</option>
+                    <option value="02">Február</option>
+                    <option value="03">Március</option>
+                    <option value="04">Április</option>
+                    <option value="05">Május</option>
+                    <option value="06">Június</option>
+                    <option value="07">Július</option>
+                    <option value="08">Augusztus</option>
+                    <option value="09">Szeptember</option>
+                    <option value="10">Október</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <input type="number" name="nap" id="nap" placeholder="Nap" max="31" min="1">
+            </section>
+            
+            <section class="sor">
+                <input type="button" value="Mehet!" id="leker">
+                <p id="kiir1"></p>
+            </section>
+
+        </div>
+        
+        <div class="ma">
+            <p class="maiszoveg" onclick="maidatum()">Mai névnap:</p>
+            <p id="ma"></p>
+        </div>
+
+
+        <div class="holnap">
+            <p>Holnapi névnap:</p>
+            <p id="holnap"></p>
+        </div>
+
+
+
+    </main>
+
+    <section>
+        <p class="mainap" id="mainap"></p>
+    </section>
+
+
+    <footer>
+        <p>NévnAPP™ 2025</p>
+    </footer>
+</body>
+</html>
