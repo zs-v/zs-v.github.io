@@ -29,6 +29,7 @@ async function lekeres(){
     console.log(adat);
     nevkiir(adat.nameday.hu);
 
+    //jelentes();
 }
 
 async function tegnap(){
@@ -60,6 +61,11 @@ function maidatum(){
     else{
         elem.style.display = "none";
     }
+}
+
+function jelentes(){
+    var nev = document.getElementById("kiir1").innerHTML;
+    document.getElementById("iframe").src="https://nevnapma.hu/eredete/" + nev;
 }
 
 main();
